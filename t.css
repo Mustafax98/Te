@@ -1,7 +1,40 @@
-body { font-family: Arial, sans-serif; margin: 0; padding: 0; background: #f4f4f4; }
-    header, nav, main { padding: 20px; }
-    nav button { margin: 5px; padding: 10px 20px; cursor: pointer; }
-    .section { display: none; padding: 20px; background: white; margin: 10px 0; border-radius: 10px; }
-    .active { display: block; }
-    table { width: 100%; border-collapse: collapse; margin-top: 10px; }
-    th, td { border: 1px solid #ddd; padding: 8px; text-align: center; }
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background: #f4f4f4;
+}
+
+header, nav, main {
+  padding: 20px;
+}
+
+nav button {
+  margin: 5px;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+
+.section {
+  display: none;
+  padding: 20px;
+  background: white;
+  margin: 10px 0;
+  border-radius: 10px;
+}
+
+.active {
+  display: block;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+}
+
+th, td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: center;
+}
