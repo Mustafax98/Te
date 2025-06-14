@@ -1,21 +1,30 @@
-// add hovered class to selected list item
-let list = document.querySelectorAll(".navigation li");
+const sections = document.querySelectorAll('.section');
+const tabs = document.querySelectorAll('.tab');
+const loginRole = document.getElementById('loginRole');
 
-function activeLink() {
-  list.forEach((item) => {
-    item.classList.remove("hovered");
-  });
-  this.classList.add("hovered");
+const permissions = {
+  client: ['profile', 'menu'],
+  owner: ['profile', 'partners', 'menu', 'crm', 'logistics', 'pos', 'stocks'],
+  supplier: ['profile', 'stocks'],
+  restaurant: ['profile', 'menu', 'logistics', 'pos', 'stocks'],
+  restaurantAdmin: ['profile', 'menu', 'pos']
+};
+
+loginRole.addEventListener('change', () => {
+  sections.forEach(sec => sec.style.display = 'none');
+});
+
+function showSection(id) {
+  const role = loginRole.value;
+  if (!permissions[role]?.includes(id)) {
+    alert('ليست لديك صلاحية الوصول لهذه الصفحة');
+    return;
+  }
+  sections.forEach(sec => sec.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
 }
 
-list.forEach((item) => item.addEventListener("mouseover", activeLink));
-
-// Menu Toggle
-let toggle = document.querySelector(".toggle");
-let navigation = document.querySelector(".navigation");
-let main = document.querySelector(".main");
-
-toggle.onclick = function () {
-  navigation.classList.toggle("active");
-  main.classList.toggle("active");
-};
+function showTab(tabId) {
+  tabs.forEach(tab => tab.style.display = 'none');
+  document.getElementById(tabId).style.display = 'block';
+}
