@@ -1,79 +1,54 @@
-<!DOCTYPE html><html lang="en">
+<!DOCTYPE html>
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Multi-System Dashboard</title>
-  <link rel="stylesheet" href="t.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Account Portal</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="/login.css">
 </head>
 <body>
-  <header>
-    <h1>Company Dashboard</h1>
-    <select id="loginRole">
-      <option value="">-- اختر طريقة تسجيل الدخول --</option>
-      <option value="client">عميل</option>
-      <option value="owner">صاحب النظام</option>
-      <option value="supplier">مورد</option>
-      <option value="restaurant">مطعم</option>
-      <option value="restaurantAdmin">أدمن مطعم</option>
-    </select>
-  </header>  <nav>
-    <button onclick="showSection('profile')">Profile</button>
-    <button onclick="showSection('partners')">Partners</button>
-    <button onclick="showSection('menu')">Menu QR</button>
-    <button onclick="showSection('crm')">CRM</button>
-    <button onclick="showSection('logistics')">Logistics</button>
-    <button onclick="showSection('pos')">POS</button>
-    <button onclick="showSection('stocks')">Stocks</button>
-  </nav>  <main>
-    <section id="profile" class="section">
-      <h2>Profile</h2>
-      <p>موبايل: 01012345678</p>
-      <p>فروع: القاهرة - الجيزة - الاسكندرية</p>
-      <p>فيسبوك: facebook.com/company</p>
-    </section><section id="partners" class="section">
-  <h2>Partners</h2>
-  <div>
-    <button onclick="showTab('meat')">اللحوم</button>
-    <button onclick="showTab('fish')">الأسماك</button>
-    <div id="meat" class="tab active">
-      <p>الشركة: لحوم VIP</p>
-      <p>الشركة: لحوم المصري</p>
+  <div class="signin-container">
+    <div class="tab-switch">
+      <button id="signin-tab" class="active">Sign In</button>
+      <button id="signup-tab">Sign Up</button>
     </div>
-    <div id="fish" class="tab" style="display:none">
-      <p>الشركة: أسماك البحر</p>
-      <p>الشركة: سمك وولع</p>
+
+    <!-- Sign In Form -->
+    <div id="signin-form" class="tab-content active">
+      <h2>Sign In</h2>
+      <div class="inps">
+        <input type="text" placeholder="Username" id="username" />
+        <input type="password" placeholder="Password" id="password" />
+      </div>
+      <button id="signin-btn">Sign In</button>
+      
+      <p style="margin:1rem 0 0.5rem; font-weight:bold;">or sign in with</p>
+      <div class="social-login">
+        <button class="social-btn google" title="Sign in with Google">G</button>
+        <button class="social-btn facebook" title="Sign in with Facebook">f</button>
+        <button class="social-btn twitter" title="Sign in with Twitter">t</button>
+        <button class="social-btn apple" title="Sign in with Apple"><i class="fab fa-apple"></i></button>
+      </div>
+    </div>
+    
+    <!-- Sign Up Form -->
+    <div id="signup-form" class="tab-content">
+      <h2>Create Account</h2>
+      <div class="inps">
+        <input type="text" placeholder="Full Name" id="signup-fullname" />
+        <input type="text" placeholder="Business Name" id="signup-business" />
+        <input type="text" placeholder="Mobile Number" id="signup-mobile" />
+        <input type="text" placeholder="Address" id="signup-address" />
+        <input type="email" placeholder="Email" id="signup-email" />
+        <input type="text" placeholder="Username" id="signup-username" />
+        <input type="password" placeholder="Password" id="signup-password" />
+      </div>
+      <button id="create-account-btn">Create Account</button>
+        
     </div>
   </div>
-</section>
 
-<section id="menu" class="section">
-  <h2>Menu QR</h2>
-  <table>
-    <tr><th>الصنف</th><th>السعر</th></tr>
-    <tr><td>كباب</td><td>150 جنيه</td></tr>
-    <tr><td>سمك بلطي</td><td>100 جنيه</td></tr>
-  </table>
-</section>
-
-<section id="crm" class="section">
-  <h2>CRM</h2>
-  <p>نظام إدارة العملاء والتواصل</p>
-</section>
-
-<section id="logistics" class="section">
-  <h2>Logistics</h2>
-  <p>نظام توصيل الطلبات والدليفري</p>
-</section>
-
-<section id="pos" class="section">
-  <h2>POS</h2>
-  <p>نظام نقطة البيع</p>
-</section>
-
-<section id="stocks" class="section">
-  <h2>Stocks</h2>
-  <p>العناصر المتاحة في المخزن</p>
-</section>
-
-  </main>  <script src="main.js"></script></body>
+  <script src="/login.js"></script>
+</body>
 </html>
